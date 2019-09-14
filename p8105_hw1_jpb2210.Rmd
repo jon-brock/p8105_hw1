@@ -1,10 +1,10 @@
 ---
 title: 'Data Science - Homework #1'
 author: "Jon Brock - JPB2210"
-output:
+output: 
     github_document:
-    toc: TRUE
-    toc_depth: 2
+        toc: TRUE
+        toc_depth: 2
 
 ---
 
@@ -12,10 +12,8 @@ output:
 library(tidyverse)
 ```
 
-
-
 ## Problem #1
-######(*25 points*)
+###### (*25 points*)
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_1}
@@ -43,7 +41,7 @@ We see that we are unable to take the mean value from `vec_character` and `vec_f
 ***
 
 ## Problem #2
-######(*25 points*)
+###### (*25 points*)
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_2}
@@ -57,26 +55,42 @@ prob2_df <- tibble(
 ```
 Let me tell you a few fun facts about my Problem #2 data frame:  
     1. The data frame has **`r nrow(prob2_df)`** rows and **`r ncol(prob2_df)`** columns.  
-    2. The variable 'x' has a mean value of **`r mean(pull(prob2_df, x))`**, a median value of **`r median(pull(prob2_df, x))`**, and a standard         deviation of **`r sd(pull(prob2_df, x))`**.  
+    2. The variable 'x' has a mean value of **`r mean(pull(prob2_df, x))`**, a median value of **`r median(pull(prob2_df, x))`**, and a standard deviation of **`r sd(pull(prob2_df, x))`**.  
     3. The proportion of cases for which `x + y > 1` is XX.  
 
 ***
 
 ```{r yx_scatterplot_logical}
-ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_logical_p2))
+p8105_hw1_plot1 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_logical_p2))
 ```
 
 ```{r yx_scatterplot_numeric}
-ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_numeric_p2))
+p8105_hw1_plot2 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_numeric_p2))
 ```
 
 ```{r yx_scatterplot_factor}
-ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_factor_p2))
+p8105_hw1_plot3 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_factor_p2))
 ```
 
+```{r display_plots, fig.align = "center"}
+p8105_hw1_plot1
+p8105_hw1_plot2
+p8105_hw1_plot3
+```
 
+***
 
+##### *Save the first generated plot to the project directory*
+```{r yx_scatterplot_save}
+ggsave(filename = "hw1_prob2_plot1.png", plot = p8105_hw1_plot1)
+```
 
+***
+
+## Bonus Content
+I don't know when or how I found this photo, but it's **AMAZING**.  
+
+<center> ![](cat_family_photo.jpg) </center>
 
 
 
