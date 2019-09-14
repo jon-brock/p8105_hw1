@@ -12,7 +12,7 @@ library(tidyverse)
 ```
 
 ## Problem #1
-*Create a data frame with specific inclusions*
+##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame}
 prob1_df <- tibble(
@@ -22,3 +22,18 @@ prob1_df <- tibble(
     vec_factor = c("good", "neutral", "bad", "good", "neutral", "bad", "good", "bad")
 )
 ```
+***
+
+##### *Taking the mean value of each vector within our data frame:*
+
+The mean value of `vec_numeric` is `r mean(pull(prob1_df, vec_numeric))`.  
+The mean value of `vec_logical` is `r mean(pull(prob1_df, vec_logical))`.  
+The mean value of `vec_character` is `r mean(pull(prob1_df, vec_character))`.  
+The mean value of `vec_factor` is `r mean(pull(prob1_df, vec_factor))`.  
+
+We see that we are unable to take the mean value from `vec_character` and `vec_factor`. Additionally, while we did take a mean value from `vec_logical` it's merely a mean of 0's and 1's.
+
+```{r vector_conversions, eval = FALSE}
+#THIS SECTION IS PENDING COMPLETION.
+```
+***
