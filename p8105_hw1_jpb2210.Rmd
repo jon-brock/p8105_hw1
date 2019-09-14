@@ -60,15 +60,15 @@ Let me tell you a few fun facts about my Problem #2 data frame:
 
 ***
 
-```{r yx_scatterplot_logical}
+```{r yx_scatterplot_logical, include = FALSE}
 p8105_hw1_plot1 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_logical_p2))
 ```
 
-```{r yx_scatterplot_numeric}
+```{r yx_scatterplot_numeric, include = FALSE}
 p8105_hw1_plot2 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_numeric_p2))
 ```
 
-```{r yx_scatterplot_factor}
+```{r yx_scatterplot_factor, include = FALSE}
 p8105_hw1_plot3 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_factor_p2))
 ```
 
