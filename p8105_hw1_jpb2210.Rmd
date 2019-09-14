@@ -1,0 +1,8 @@
+---
+title: 'Data Science - Homework #1'
+author: "Jon Brock - JPB2210"
+date: "9/14/2019"
+output: github_document
+---
+
+
