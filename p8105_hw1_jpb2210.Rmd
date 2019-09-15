@@ -60,7 +60,7 @@ Let me tell you a few fun facts about my Problem #2 data frame:
         - a mean value of `r mean(pull(prob2_df, x))`  
         - a median value of `r median(pull(prob2_df, x))`, and  
         - a standard deviation of `r sd(pull(prob2_df, x))`.  
-    3. The proportion of cases for which `x + y > 1` is XX.  
+    3. The proportion of cases for which `x + y > 1` is `r mean(pull(prob2_df, vec_logical_p2))`.  
 
 ***
 
@@ -95,10 +95,3 @@ ggsave(filename = "hw1_prob2_plot1.png", plot = p8105_hw1_plot1)
 I don't know when or how I found this photo, but it's **AMAZING**.  
 
 <center> ![](cat_family_photo.jpg) </center>
-
-
-
-
-
-
-
