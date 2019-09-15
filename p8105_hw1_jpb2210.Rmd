@@ -16,6 +16,7 @@ library(tidyverse)
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_1}
+set.seed(10) #I set a random seed for the sake of consistency and reproducibility
 prob1_df <- tibble(
     vec_numeric = rnorm(8),
     vec_logical = vec_numeric > 0,
