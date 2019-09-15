@@ -5,7 +5,6 @@ output:
     github_document:
         toc: TRUE
         toc_depth: 2
-
 ---
 
 ```{r load_packages, include = FALSE}
@@ -21,7 +20,7 @@ prob1_df <- tibble(
     vec_numeric = rnorm(8),
     vec_logical = vec_numeric > 0,
     vec_character = c("beat", "cream", "fold", "glaze", "knead", "score", "whip", "whisk"),
-    vec_factor = c("good", "neutral", "bad", "good", "neutral", "bad", "good", "bad")
+    vec_factor = factor(c("good", "neutral", "bad", "good", "neutral", "bad", "good", "bad"))
 )
 ```
 ***
@@ -36,7 +35,7 @@ The mean value of `vec_factor` is `r mean(pull(prob1_df, vec_factor))`.
 We see that we are unable to take the mean value from `vec_character` and `vec_factor`. Additionally, while we did take a mean value from `vec_logical` it's merely a mean of 0's and 1's.
 
 ```{r vector_conversions, eval = FALSE}
-#THIS SECTION IS PENDING COMPLETION
+#THIS SECTION PENDING COMPLETION
 ```
 ***
 
@@ -45,6 +44,7 @@ We see that we are unable to take the mean value from `vec_character` and `vec_f
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_2}
+set.seed(25) #I set a random seed for the sake of consistency and reproducibility
 prob2_df <- tibble(
     x = rnorm(500),
     y = rnorm(500),
@@ -54,8 +54,12 @@ prob2_df <- tibble(
 )
 ```
 Let me tell you a few fun facts about my Problem #2 data frame:  
-    1. The data frame has **`r nrow(prob2_df)`** rows and **`r ncol(prob2_df)`** columns.  
-    2. The variable 'x' has a mean value of **`r mean(pull(prob2_df, x))`**, a median value of **`r median(pull(prob2_df, x))`**, and a standard deviation of **`r sd(pull(prob2_df, x))`**.  
+
+    1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns.  
+    2. The variable 'x' has:  
+        - a mean value of `r mean(pull(prob2_df, x))`  
+        - a median value of `r median(pull(prob2_df, x))`, and  
+        - a standard deviation of `r sd(pull(prob2_df, x))`.  
     3. The proportion of cases for which `x + y > 1` is XX.  
 
 ***
