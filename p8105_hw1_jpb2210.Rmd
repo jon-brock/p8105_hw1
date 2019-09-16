@@ -16,7 +16,7 @@ library(tidyverse)
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_1}
-set.seed(10) #I set a random seed for the sake of consistency and reproducibility
+set.seed(134) #I set a random seed for the sake of consistency and reproducibility
 prob1_df <- tibble(
     vec_numeric = rnorm(8),
     vec_logical = vec_numeric > 0,
@@ -45,7 +45,7 @@ We see that we are unable to take the mean value from `vec_character` and `vec_f
 ##### *Create a data frame with specific inclusions:*
 
 ```{r create_data_frame_2}
-set.seed(25) #I set a random seed for the sake of consistency and reproducibility
+set.seed(53) #I set a random seed for the sake of consistency and reproducibility
 prob2_df <- tibble(
     x = rnorm(500),
     y = rnorm(500),
@@ -56,12 +56,12 @@ prob2_df <- tibble(
 ```
 Let me tell you a few fun facts about `prob2_df`:  
 
-    1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns  
-    2. The variable 'x' has:  
-        - a mean value of `r round(mean(pull(prob2_df, x)), digits = 3)`  
-        - a median value of `r round(median(pull(prob2_df, x)), digits = 3)`  
-        - a standard deviation of `r round(sd(pull(prob2_df, x)), digits = 3)`    
-    3. The proportion of cases for which `x + y > 1` is `r round(mean(pull(prob2_df, vec_logical_p2)), digits = 3)`  
+1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns  
+1. The variable 'x' has:  
+ * a mean value of `r round(mean(pull(prob2_df, x)), digits = 3)`  
+ * a median value of `r round(median(pull(prob2_df, x)), digits = 3)`  
+ * a standard deviation of `r round(sd(pull(prob2_df, x)), digits = 3)`    
+1. The proportion of cases for which `x + y > 1` is `r round(mean(pull(prob2_df, vec_numeric_p2)), digits = 3)`  
 
 ***
 
