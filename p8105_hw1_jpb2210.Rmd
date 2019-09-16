@@ -28,8 +28,8 @@ prob1_df <- tibble(
 
 ##### *Taking the mean value of each vector within our data frame:*
 
-The mean value of `vec_numeric` is `r mean(pull(prob1_df, vec_numeric))`.  
-The mean value of `vec_logical` is `r mean(pull(prob1_df, vec_logical))`.  
+The mean value of `vec_numeric` is `r round(mean(pull(prob1_df, vec_numeric)), digits = 3)`.  
+The mean value of `vec_logical` is `r round(mean(pull(prob1_df, vec_logical)), digits = 3)`.  
 The mean value of `vec_character` is `r mean(pull(prob1_df, vec_character))`.  
 The mean value of `vec_factor` is `r mean(pull(prob1_df, vec_factor))`.  
 
@@ -54,14 +54,14 @@ prob2_df <- tibble(
     vec_factor_p2 = as.factor(vec_logical_p2)
 )
 ```
-Let me tell you a few fun facts about my Problem #2 data frame:  
+Let me tell you a few fun facts about `prob2_df`:  
 
-    1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns.  
+    1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns  
     2. The variable 'x' has:  
-        - a mean value of `r mean(pull(prob2_df, x))`  
-        - a median value of `r median(pull(prob2_df, x))`, and  
-        - a standard deviation of `r sd(pull(prob2_df, x))`.  
-    3. The proportion of cases for which `x + y > 1` is `r mean(pull(prob2_df, vec_logical_p2))`.  
+        - a mean value of `r round(mean(pull(prob2_df, x)), digits = 3)`  
+        - a median value of `r round(median(pull(prob2_df, x)), digits = 3)`  
+        - a standard deviation of `r round(sd(pull(prob2_df, x)), digits = 3)`    
+    3. The proportion of cases for which `x + y > 1` is `r round(mean(pull(prob2_df, vec_logical_p2)), digits = 3)`  
 
 ***
 
