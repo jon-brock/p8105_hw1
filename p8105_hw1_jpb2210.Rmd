@@ -96,21 +96,25 @@ Let me tell you a few fun facts about `prob2_df`:
 ***
 
 ```{r yx_scatterplot_logical, include = FALSE}
-p8105_hw1_plot1 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_logical_p2))
+p8105_hw1_plot1 <- ggplot(prob2_df, aes(x = x, y = y, color = vec_logical_p2)) + geom_point()
 ```
 
 ```{r yx_scatterplot_numeric, include = FALSE}
-p8105_hw1_plot2 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_numeric_p2))
+p8105_hw1_plot2 <- ggplot(prob2_df, aes(x = x, y = y, color = vec_numeric_p2)) + geom_point()
 ```
 
 ```{r yx_scatterplot_factor, include = FALSE}
-p8105_hw1_plot3 <- ggplot(prob2_df) + geom_point(mapping = aes(x = x, y = y, color = vec_factor_p2))
+p8105_hw1_plot3 <- ggplot(prob2_df, aes(x = x, y = y, color = vec_factor_p2)) + geom_point()
 ```
 
 ```{r display_plots, fig.align = "center"}
-p8105_hw1_plot1
-p8105_hw1_plot2
-p8105_hw1_plot3
+#Two colors reflect the two values of the logical vector (TRUE/FALSE)  
+p8105_hw1_plot1  
+#A color gradient reflects the range of possible values of the numeric vector;  
+#only two values are in this particular vector (0,1)  
+p8105_hw1_plot2  
+#Two colors reflect the two levels of the factor vector (TRUE/FALSE)  
+p8105_hw1_plot3  
 ```
 
 ***
