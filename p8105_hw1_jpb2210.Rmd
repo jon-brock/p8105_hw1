@@ -35,9 +35,39 @@ The mean value of `vec_factor` is `r mean(pull(prob1_df, vec_factor))`.
 
 We see that we are unable to take the mean value from `vec_character` and `vec_factor`. Additionally, while we did take a mean value from `vec_logical` it's merely a mean of 0's and 1's.
 
-```{r vector_conversions, eval = FALSE}
-#THIS SECTION PENDING COMPLETION
+```{r vector_conversions_1, eval = FALSE}
+vec_log_num <- as.numeric(pull(prob1_df, vec_logical))
+vec_char_num <- as.numeric(pull(prob1_df, vec_character))
+vec_fac_num <- as.numeric(pull(prob1_df, vec_factor))
+
+#I used the following three lines of code in order to verify that my previous code was successful
+vec_log_num
+vec_char_num
+vec_fac_num
+```  
+By using the `as.numeric()` function on our logical, character, and factor variables we converted them into numerical values:  
+  
+* Logical vectors have two values, `TRUE` and `FALSE`, which were converted into `1` and `0`, respectively  
+* Character vectors are unable to be coerced into numerical vectors, hence why we got `NA` for output (not shown)  
+* Factor vectors get coerced into their respective `levels = ...` and are assigned a numeric value for each level
+
+This explains why we were able to pull the mean value of some vectors, but not with other vectors (i.e., `character`)  
+
+***  
+
+##### *Create a second code chunk with multiple conversions and operations:*
+```{r vector_conversions_2, warning = FALSE}
+vec_log2num_prod <- as.numeric(pull(prob1_df, vec_logical)) * pull(prob1_df, vec_numeric)
+vec_log2num_prod  
+
+vec_log2fac_prod <- as.factor(pull(prob1_df, vec_logical)) * pull(prob1_df, vec_numeric)
+vec_log2fac_prod
+
+vec_log2fac2num_prod <- as.numeric(as.factor(pull(prob1_df, vec_logical))) * pull(prob1_df, vec_numeric)
+vec_log2fac2num_prod
 ```
+
+
 ***
 
 ## Problem #2
@@ -58,9 +88,9 @@ Let me tell you a few fun facts about `prob2_df`:
 
 1. The data frame has `r nrow(prob2_df)` rows and `r ncol(prob2_df)` columns  
 1. The variable 'x' has:  
- * a mean value of `r round(mean(pull(prob2_df, x)), digits = 3)`  
- * a median value of `r round(median(pull(prob2_df, x)), digits = 3)`  
- * a standard deviation of `r round(sd(pull(prob2_df, x)), digits = 3)`    
+  * a mean value of `r round(mean(pull(prob2_df, x)), digits = 3)`  
+  * a median value of `r round(median(pull(prob2_df, x)), digits = 3)`  
+  * a standard deviation of `r round(sd(pull(prob2_df, x)), digits = 3)`    
 1. The proportion of cases for which `x + y > 1` is `r round(mean(pull(prob2_df, vec_numeric_p2)), digits = 3)`  
 
 ***
